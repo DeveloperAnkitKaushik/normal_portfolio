@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("4ScG4W9HM93QjdSf-");
+        })();
+    </script>
+    <title>Ankit Kaushik | Portfolio</title>
+</head>
+
+<body onmousemove="moveBackground(event)">
+    <section id="landing-page">
+        <div class="row">
+            <nav>
+                <div class="nav__logo">
+                    <a href="/"><img src="./assets/logo.png" alt="" class="nav__logo--image"></a>
+                </div>
+                <ul class="nav__links">
+                    <li class="nav__links--items"><a href="#" class="nav__links--link link-hover-effect"
+                            onclick="toggleModel()">About</a></li>
+                    <li class="nav__links--items"><a href="#project-section"
+                            class="nav__links--link link-hover-effect">Projects</a>
+                    </li>
+                    <li class="nav__links--items"><a href="#" class="nav__links--link link-hover-effect"
+                            onclick="toggleModel()">Contact</a>
+                    </li>
+                    <li class="nav__links--items click" onclick="toggleDarkMode()"><i
+                            class="fa-solid fa-circle-half-stroke"></i></li>
+                </ul>
+            </nav>
+            <div class="header">
+                <div class="header__content">
+                    <div class="header__content--heading">
+                        <div class="header__content--heading-one">Hey</div>
+                        <div class="header__content--heading-two"><span class="text-color">I'm Ankit.</span></div>
+                    </div>
+                    <div class="header__content--info">I'm a <span class="text-color">Frontend Software Engineer</span>
+                        with a strong pasion for building web application with great user experiences. Here's bit more
+                        <span class="text-color click" onclick="toggleModel()">about me.</span>
+                    </div>
+                    <div class="header__content--social-links">
+                        <a href="#" class="social-links click" target="_blank"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-links click" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-links click" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#">
+                <div class="mail-button click" onclick="toggleModel()">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+            </a>
+            <a href="#projects" class="scroll">
+                <div class="scroll-icon click"></div>
+            </a>
+            <div class="model">
+                <div class="model-half model-about">
+                    <div class="model-heading">Here's a bit about me.</div>
+                    <div class="model-sub-heading">Frontend Software Engineer.</div>
+                    <div class="model-para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, nisi?
+                        Distinctio cumque quod, enim officiis perferendis, asperiores nemo nulla architecto consectetur
+                        impedit similique fugit obcaecati vitae accusamus numquam qui doloribus, laborum adipisci quam?
+                        Praesentium recusandae ipsa laudantium explicabo quae esse?</div>
+                    <div class="model-languages">
+                        <figure class="model-languages-wrapper">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                                alt="" class="model-languages-image">
+                            <span class="model-language-name">HTML</span>
+                        </figure>
+                        <figure class="model-languages-wrapper">
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt=""
+                                class="model-languages-image">
+                            <span class="model-language-name">CSS</span>
+                        </figure>
+                        <figure class="model-languages-wrapper">
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt=""
+                                class="model-languages-image">
+                            <span class="model-language-name">JS</span>
+                        </figure>
+                        <figure class="model-languages-wrapper">
+                            <img src="	https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" alt=""
+                                class="model-languages-image">
+                            <span class="model-language-name">React</span>
+                        </figure>
+                    </div>
+                </div>
+                <div class="model-half model-contact">
+                    <i class="fas fa-times model-exit click" onclick="toggleModel()"></i>
+                    <div class="model-heading">Let's have a chat!</div>
+                    <div class="model-sub-heading model-sub-heading-contact">I'm currently open to new opportunities.
+                    </div>
+                    <form onsubmit="contact(event)" id="contact-form">
+                        <div class="form-items">
+                            <label class="form-items-label">Name:</label>
+                            <input type="text" class="form-items-input" name="user_name" required />
+                        </div>
+                        <div class="form-items">
+                            <label class="form-items-label">E-mail:</label>
+                            <input type="email" class="form-items-input" name="user_email" required />
+                        </div>
+                        <div class="form-items">
+                            <label class="form-items-label">Message:</label>
+                            <textarea type="text" class="form-items-input" name="user_message" required></textarea>
+                        </div>
+                        <button type="submit" id="contact-submit" class="form-submit">Send it my way</button>
+                    </form>
+                    <div class="model-overlay model-overlay-loading">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                    <div class="model-overlay model-overlay-success">Thanks for the message! Looking forward to speaking
+                        with you.</div>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/circle.svg" class="shape shape-0" alt="">
+        <img src="./assets/semi circle.svg" class="shape shape-1 " alt="">
+        <img src="./assets/squiggly.svg" class="shape shape-2" alt="">
+        <img src="./assets/triangle.svg" class="shape shape-3" alt="">
+        <img src="./assets/circle.svg" class="shape shape-4" alt="">
+        <img src="./assets/semi circle.svg" class="shape shape-5" alt="">
+        <img src="./assets/squiggly.svg" class="shape shape-6" alt="">
+        <img src="./assets/triangle.svg" class="shape shape-7" alt="">
+        <img src="./assets/circle.svg" class="shape shape-8" alt="">
+    </section>
+    <section id="project-section">
+        <div class="row">
+            <div class="project-container">
+                <div class="project-heading">Here are some of my <span class="text-color">projects.</span></div>
+                <ul class="project-list">
+                    <li class="project">
+                        <div class="project-wrapper">
+                            <img src="./assets/blinker mockup.png" alt="" class="project-image">
+                            <div class="project-wrapper-bg">
+                                <div class="project-description">
+                                    <div class="project-description-heading">Movie App</div>
+                                    <div class="project-description-sub-heading">React, Redux, Firebase, HTMML, CSS, JS
+                                    </div>
+                                    <div class="project-description-info">Lorem ipsum dolor sit, amet consectetur
+                                        adipisicing elit. Voluptatem adipisci cum et officia voluptates! Consequuntur
+                                        quisquam alias nostrum reiciendis minima tenetur optio voluptate dicta ex et
+                                        dolorum, autem placeat iusto rerum iure nisi impedit ab velit non dolor
+                                        blanditiis, in soluta. Facere earum odit at ex eius totam praesentium mollitia?
+                                    </div>
+                                    <div class="project-description-links">
+                                        <a href="" class="project-description-link"><i
+                                                class="fa-brands fa-github"></i></a>
+                                        <a href="" class="project-description-link"><i class="fa-solid fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project-wrapper">
+                            <img src="./assets/blinker mockup.png" alt="" class="project-image">
+                            <div class="project-wrapper-bg">
+                                <div class="project-description">
+                                    <div class="project-description-heading">Movie App</div>
+                                    <div class="project-description-sub-heading">React, Redux, Firebase, HTMML, CSS, JS
+                                    </div>
+                                    <div class="project-description-info">Lorem ipsum dolor sit, amet consectetur
+                                        adipisicing elit. Voluptatem adipisci cum et officia voluptates! Consequuntur
+                                        quisquam alias nostrum reiciendis minima tenetur optio voluptate dicta ex et
+                                        dolorum, autem placeat iusto rerum iure nisi impedit ab velit non dolor
+                                        blanditiis, in soluta. Facere earum odit at ex eius totam praesentium mollitia?
+                                    </div>
+                                    <div class="project-description-links">
+                                        <a href="" class="project-description-link"><i
+                                                class="fa-brands fa-github"></i></a>
+                                        <a href="" class="project-description-link"><i class="fa-solid fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project-wrapper">
+                            <img src="./assets/blinker mockup.png" alt="" class="project-image">
+                            <div class="project-wrapper-bg">
+                                <div class="project-description">
+                                    <div class="project-description-heading">Movie App</div>
+                                    <div class="project-description-sub-heading">React, Redux, Firebase, HTMML, CSS, JS
+                                    </div>
+                                    <div class="project-description-info">Lorem ipsum dolor sit, amet consectetur
+                                        adipisicing elit. Voluptatem adipisci cum et officia voluptates! Consequuntur
+                                        quisquam alias nostrum reiciendis minima tenetur optio voluptate dicta ex et
+                                        dolorum, autem placeat iusto rerum iure nisi impedit ab velit non dolor
+                                        blanditiis, in soluta. Facere earum odit at ex eius totam praesentium mollitia?
+                                    </div>
+                                    <div class="project-description-links">
+                                        <a href="" class="project-description-link"><i
+                                                class="fa-brands fa-github"></i></a>
+                                        <a href="" class="project-description-link"><i class="fa-solid fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo"><img src="./assets/footer-logo.png" alt=""></div>
+            <span class="dooter-link-top"></span>
+            <div class="footer-links">
+                <a class="footer-link link-hover-effect click">Github</a>
+                <a class="footer-link link-hover-effect click">Linkdin</a>
+                <a href='#' class="footer-link link-hover-effect click" onclick="toggleModel()">Contact</a>
+                <a class="footer-link link-hover-effect click">Instagram</a>
+            </div>
+            <div class="footer-copyright">Copyright © <span class="currentYear">2023</span>
+                <a href="#"><span class="text-color click" onclick="toggleModel()">Ankit Kaushik</span></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
